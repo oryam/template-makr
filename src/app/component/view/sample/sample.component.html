@@ -1,0 +1,22 @@
+<div class="app-sample">
+	<h2>Samples</h2>
+	
+	<div *ngIf="samples">
+		<div *ngFor="let sample of samples" fxLayout="row" fxLayoutAlign="space-around start">
+			<div> {{ sample.id }} </div>
+			<div> {{ sample.name }} </div>
+			<div [style.backgroundColor]="sample.tagged | color"> {{ sample.value }} </div>
+		</div>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="space-around start" class="actions">
+	  <a mat-raised-button routerLink="/">Home</a>
+	  <button mat-raised-button>Basic</button>
+	  <button mat-raised-button color="primary">Primary</button>
+	  <button mat-raised-button color="accent">Accent</button>
+	  <button mat-raised-button color="warn">Warn</button>
+	  <button mat-raised-button disabled>Disabled</button>
+	  <button mat-icon-button>
+	    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+	  </button>
+	</div>
+</div>
