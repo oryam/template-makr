@@ -1,4 +1,22 @@
 <div class="app-page1">
-	<span> {{ data.label }} </span>
-	<span> {{ data.value }} </span>
+<h1> {{ data.element.title }} </h1>
+<div> {{ data.element.content }} </div>
+	<header class="app-header">
+		Header {{ header.element.title }}
+		- {{ header.element.content }}
+	</header>
+	<main class="app-main">
+		Main {{ main.element.title }}
+		- {{ main.element.content }}
+		<div fxLayout="column" fxLayoutAlign="start start">
+			<div *ngFor="let section of main.children" fxLayout="column" fxLayoutAlign="start start">
+				<div> {{ section.element.title }} </div>
+				<div> {{ section.element.content }} </div>
+			</div>
+		</div>
+	</main>
+	<footer class="app-footer">
+		Footer {{ footer.element.title }}
+		- {{ footer.element.content }}
+	</footer>
 </div>
