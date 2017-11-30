@@ -2,21 +2,12 @@
 <h1> {{ page.section.element.title }} </h1>
 <div [innerHTML]="page.section.element.content"></div>
 	<header class="app-header">
-		Header {{ header.element.title }}
-		<div [innerHTML]="header.element.content"></div>
+		<app-section *ngIf="header" [section]="header"></app-section>
 	</header>
 	<main class="app-main">
-		Main {{ main.element.title }}
-		<div [innerHTML]="main.element.content"></div>
-		<div fxLayout="column" fxLayoutAlign="start start">
-			<div *ngFor="let section of main.children" fxLayout="column" fxLayoutAlign="start start">
-				<div> {{ section.element.title }} </div>
-				<div [innerHTML]="section.element.content"></div>
-			</div>
-		</div>
+		<app-section *ngIf="main" [section]="main"></app-section>
 	</main>
 	<footer class="app-footer">
-		Footer {{ footer.element.title }}
-		<div [innerHTML]="footer.element.content"></div>
+		<app-section *ngIf="footer" [section]="footer"></app-section>
 	</footer>
 </div>

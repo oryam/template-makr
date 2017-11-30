@@ -1,0 +1,9 @@
+<div *ngIf="section" class="app-section">
+	{{ section.element.title }}
+	<div [innerHTML]="section.element.content"></div>
+	<div fxLayout="column" fxLayoutAlign="start start">
+		<div *ngFor="let subsection of section.children" fxLayout="column" fxLayoutAlign="start start">
+			<app-section *ngIf="subsection" [section]="subsection"></app-section>
+		</div>
+	</div>
+</div>

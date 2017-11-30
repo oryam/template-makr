@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { SampleComponent } from './sample/sample.component';
 import { PreviewComponent } from './preview/preview.component';
 import { Page1Component } from './template/page1/page1.component';
+import { SectionComponent } from './template/section/section.component';
 
 
 @NgModule( {
@@ -19,6 +20,7 @@ import { Page1Component } from './template/page1/page1.component';
         SampleComponent,
         PreviewComponent,
         Page1Component,
+        SectionComponent,
     ],
     imports: [
         AppVendorModule,
