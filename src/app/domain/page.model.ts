@@ -1,7 +1,6 @@
 export class Page {
     constructor(
-        public component: any,
-        public data: ICommonSection,
+        public section: ICommonSection,
     ) { }
 }
 

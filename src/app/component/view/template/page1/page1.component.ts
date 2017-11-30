@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ICommonSection } from "../../../../domain/page.model";
+import { ICommonSection, Page } from '../../../../domain/page.model';
 
 
 @Component( {
@@ -10,7 +10,7 @@ import { ICommonSection } from "../../../../domain/page.model";
 } )
 export class Page1Component implements OnInit {
 
-    protected _data: ICommonSection;
+    protected _page: Page;
     header: ICommonSection;
     footer: ICommonSection;
     main: ICommonSection;
@@ -21,13 +21,13 @@ export class Page1Component implements OnInit {
     ngOnInit() {
     }
 
-    set data( value: ICommonSection ) {
-        this._data = value;
-        this.header = value.findChild( 'header' );
-        this.footer = value.findChild( 'footer' );
-        this.main = value.findChild( 'main' );
+    set page( page: Page ) {
+        this._page = page;
+        this.header = page.section.findChild( 'header' );
+        this.footer = page.section.findChild( 'footer' );
+        this.main = page.section.findChild( 'main' );
     }
 
-    get data() { return this._data; }
+    get page() { return this._page; }
 
 }

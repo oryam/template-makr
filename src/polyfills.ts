@@ -77,6 +77,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 // RX
 import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/of';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
