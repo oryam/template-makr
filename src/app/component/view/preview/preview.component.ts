@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
 
 import { Page, Section, ICommonSection } from '../../../domain/page.model';
-import { PageService } from '../../../service/page.service';
+import { PageService } from '../../../service/api/page.service';
 import { PageDirective } from '../../directive/page.directive';
 import { Page1Component } from '../template/page1/page1.component';
 import { PageRenderer, PageComponent } from '../../model/component.model';
+
 
 @Component( {
     selector: 'app-preview',

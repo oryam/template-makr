@@ -7,13 +7,29 @@ export class Page {
 export interface ICommonSection {
     element: ICommonElement;
     children: ICommonSection[];
+    layout: ILayout,
     findChild( name: string ): ICommonSection;
+}
+
+export interface ILayout {
+    layout: string;
+    layoutAlign: string;
+    align: string;
+}
+
+export class SectionLayout implements ILayout {
+    constructor(
+        public layout: string,
+        public layoutAlign: string,
+        public align: string,
+    ) { }
 }
 
 export class Section implements ICommonSection {
     constructor(
         public element: ICommonElement,
         public children: ICommonSection[],
+        public layout: ILayout,
     ) { }
 
     findChild( name: string ): ICommonSection {
@@ -30,6 +46,7 @@ export interface ICommonElement {
     title: string;
     content: string;
     photos: PhotoElement[];
+    layout?: ILayout,
 }
 
 export class TextElement implements ICommonElement {
@@ -38,6 +55,7 @@ export class TextElement implements ICommonElement {
         public title: string,
         public content: string,
         public photos: PhotoElement[],
+        public layout: ILayout,
     ) { }
 }
 
@@ -63,7 +81,7 @@ export class PhotoElement {
     /** generated name and can be renamed by user */
     name: string;
     title: string;
-    content: string;
+    url: string;
     /** panoramic, album, ... */
     imageType: string;
     /** S:small, L:large, HD:hd */

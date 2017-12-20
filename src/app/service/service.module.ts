@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 
-import { PageService } from './page.service';
+import { DatabaseService } from "./database.service";
 
 
 @NgModule( {
     imports: [],
     exports: [],
     providers: [
-        PageService,
+        DatabaseService,
     ],
 } )
 export class AppServiceModule { }

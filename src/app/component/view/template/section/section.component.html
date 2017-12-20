@@ -1,9 +1,8 @@
 <div *ngIf="section" class="app-section">
 	{{ section.element.title }}
+	<div *ngFor="let photo of section.element.photos" class="section-photo"><img [src]="photo.url"/></div>
 	<div [innerHTML]="section.element.content"></div>
-	<div fxLayout="column" fxLayoutAlign="start start">
-		<div *ngFor="let subsection of section.children" fxLayout="column" fxLayoutAlign="start start">
-			<app-section *ngIf="subsection" [section]="subsection"></app-section>
-		</div>
+	<div fxLayout="section.layout?.layout" fxLayoutAlign="section.layout?.layoutAlign">
+		<app-section *ngFor="let subsection of section.children" [section]="subsection"></app-section>
 	</div>
 </div>
